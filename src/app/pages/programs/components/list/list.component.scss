@@ -3,6 +3,10 @@
     margin: 0px 0px !important;
  }
 
+ ::ng-deep .mat-card {
+    box-shadow: 0px 0px 8px #00000029 !important;
+}
+
 .mat-radio-button.mat-accent .mat-radio-ripple .mat-ripple-element {
     opacity: 0 !important; /*click effect color change*/
     border-color: var(--secondary) !important;  
@@ -72,6 +76,10 @@
       }
 
       .second-card {
+          margin-bottom: .1rem;
+          h1 {
+              opacity: .6;
+          }
           .image {
               float: left;
               img {
@@ -93,8 +101,14 @@
 
           .blue-text {
             color: #283C8C;
+            opacity: 1 !important;
 
           }
+      }
+
+      .list {
+        max-height: 1188.5px;
+        overflow-y:auto;
       }
 }
 

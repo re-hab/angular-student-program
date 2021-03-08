@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { Constant } from 'src/app/core/defines/app.constants';
 import { ProgramService } from 'src/app/core/services/program.service'
 
@@ -10,6 +10,9 @@ import { ProgramService } from 'src/app/core/services/program.service'
   styleUrls: ['./list.component.scss']
 })
 export class ListComponent implements OnInit {
+
+  @Input() searchCity: any = null;
+  @Input() searchLearn: any = null;
 
   availableCities: any[] = Constant.availableCities;
   availableFields: any[] = Constant.availableFields;
@@ -28,7 +31,7 @@ export class ListComponent implements OnInit {
 
   selectedProgram: string = 'Bachelor';
   selectedLanguage: string = 'All';
-  selectedSortType: string = 'low'
+  selectedSortType: string = 'Ascen'
 
   programs: any[] = [];
 
@@ -42,15 +45,14 @@ export class ListComponent implements OnInit {
     this.getPrograms();
   }
 
-  getPrograms(){
+  getPrograms() {
     this.progService.getPrograms().subscribe((data: any) => {
-      console.log(data)
       this.programs = data[2].data
-      console.log(this.programs)
       this.filter()
     })
-
   }
+
+
   filter(): void {
     if (this.cityChipList)
       this.programs = this.programs.filter((item) => {
@@ -84,9 +86,36 @@ export class ListComponent implements OnInit {
 
       }
 
+    if (this.selectedSortType) {
+      switch (this.selectedSortType) {
+        case 'Ascen':
+          this.programs.sort((a, b) => parseFloat(a.fee) - parseFloat(b.fee));
+          break;
 
+        case 'Dscen':
+          this.programs.sort((a, b) => parseFloat(b.fee) - parseFloat(a.fee));
+          break;
+      }
+    }
+  }
 
-    console.log(this.programs)
+  filterFromOutside() {
+    this.progService.getPrograms().subscribe((data: any) => {
+
+      this.programs = data[2].data
+      if (this.searchCity)
+        this.programs = this.programs.filter((item) => {
+          return item.city === this.searchCity;
+        });
+
+      if (this.searchLearn)
+        this.programs = this.programs.filter((item) => {
+          return item.level.includes(this.searchLearn ) || item.type.includes(this.searchLearn);
+        });
+    })
+
+    
+
   }
 
   addCity() {
@@ -133,10 +162,6 @@ export class ListComponent implements OnInit {
 
   removeSchool(item: string) {
     this.schoolChipList = this.schoolChipList.filter(elem => elem !== item)
-  }
-
-  submit() {
-    console.log(this.selectedProgram, this.selectedLanguage, this.selectedSortType)
   }
 
 }

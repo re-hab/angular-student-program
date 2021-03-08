@@ -1,11 +1,13 @@
-import { Component, OnInit } from '@angular/core';
-
+import { Component, OnInit, ViewChild } from '@angular/core';
+import { ListComponent } from './components/list/list.component'
 @Component({
   selector: 'app-programs',
   templateUrl: './programs.component.html',
   styleUrls: ['./programs.component.scss']
 })
 export class ProgramsComponent implements OnInit {
+
+  @ViewChild('programList') programList: ListComponent;
 
   subject: string='';
   cities: any[]=['egypt', 'alex'];
@@ -18,6 +20,7 @@ export class ProgramsComponent implements OnInit {
   }
 
   submit() {
+    this.programList.filterFromOutside();
     console.log(this.subject, this.enteredCity)
 
   }
