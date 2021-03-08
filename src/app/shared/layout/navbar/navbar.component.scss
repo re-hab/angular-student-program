@@ -1,5 +1,6 @@
 .navbar {
     // font-size: 16px;
+    
     .nav-wrapper {
         padding-top: 1rem;
     }
@@ -21,12 +22,14 @@
 
         .nav-link {
             color: var(--black);
+            opacity: 0.6;
             padding: .3rem 1.8rem;
             letter-spacing: 0.01rem;
             cursor: pointer;
         }
 
         .login {
+            opacity: 1;
             background-color: var(--secondary);
             color: var(--white);
             border-radius: 4px;
