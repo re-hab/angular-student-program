@@ -1,0 +1,61 @@
+<nav class="navbar">
+    <div class="container">
+        <div class="d-flex flex-row justify-content-start  align-items-center w-100 nav-wrapper">
+            <div class="logo">
+                <i class="fa fa-map-marker fa-3x" aria-hidden="true"></i>
+            </div>
+            <div>
+                <ul>
+                    <li class="nav-item d-none d-md-block">
+                        <a routerLink="/"class="nav-link ">Home</a>
+                    </li>
+                    <li class="nav-item d-none d-md-block">
+                        <a routerLink="/" class="nav-link ">Programs</a>
+                    </li>
+                    <li class="nav-item d-none d-md-block">
+                        <a routerLink="/" class="nav-link ">Schools</a>
+                    </li>
+                    <li class="nav-item d-none d-md-block">
+                        <a routerLink="/" class="nav-link ">About</a>
+                    </li>
+                    <li class="nav-item d-none d-md-block ml-3">
+                        <a routerLink="/" class="nav-link login">Login</a>
+                    </li>
+
+                    <li class="d-block d-md-none">
+                    
+                            <span (click)="openNav()"
+                            class="menu-toggle menu-icon material-icons">
+                            <i class="fa fa-bars" aria-hidden="true"></i>
+                        </span>
+            
+                    </li>
+
+                </ul>
+            </div>
+
+        </div>
+
+    </div>
+
+</nav>
+
+
+<div id="side-nav" class="sidenav">
+    <a  class="closebtn" (click)="closeNav()">&times;</a>
+    <a routerLink="/">
+       Home
+    </a>
+    <a routerLink="/">
+       Programs
+    </a>
+
+    <a routerLink="/">
+        Schools
+     </a>
+
+     <a routerLink="/">
+        Login
+     </a>
+
+  </div>
