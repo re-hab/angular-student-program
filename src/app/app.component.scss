@@ -1,15 +1,15 @@
 
-// .wrapper {
-    // padding: 25px 0;
-    // background-color: #f4fafd;
-    // border-radius: 14px;
-    // min-height: 100%;
-    // background-image: url(overlay.png);
-    // background-size: 50%;
-    // background-repeat: no-repeat;
+.wrapper {
+    background-image: url("../assets/images/group1.svg"), url("../assets/images/group2.svg");
+    background-position: 139% 96%, -27% 5%;
+    background-repeat: no-repeat;
 .content {
-    min-height: calc(100% - 109px);
     margin: auto;
 }
+}
 
-//}
+@media screen and (max-width: 1024px) {
+    .wrapper {
+    background-image: none !important;
+    }
+}

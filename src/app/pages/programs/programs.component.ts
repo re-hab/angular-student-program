@@ -21,7 +21,6 @@ export class ProgramsComponent implements OnInit {
 
   submit() {
     this.programList.filterFromOutside();
-    console.log(this.subject, this.enteredCity)
 
   }
 }
