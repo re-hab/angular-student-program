@@ -1,0 +1,164 @@
+
+<div class="wrapper">
+    <div class="row">
+        <div class="filter col-md-4 col-12 mb-3">
+            <mat-card class="first-card">
+                <mat-card-content>
+                    <div class="form-group">
+                        <form  #filterForm="ngForm">   
+                                                        
+                            <label>City</label>    
+                            <select  
+                               [(ngModel)]="selectedCity"
+                               (ngModelChange)="addCity()"
+                               class="form-control" 
+                               name="filterCity" 
+                               #filterCity="ngModel" 
+                               [disabled]="cities.length < 1">
+                               <option [ngValue]="null" [disabled]="true" >Choose one city or more</option>
+                                <option *ngFor="let city of cities" [ngValue]="city">
+                                    {{ city }}
+                                </option>
+                            </select>
+                        <mat-chip-list >
+                            <mat-chip class="mr-2 mt-3" *ngFor="let city of chipList" [selectable]="selectable"
+                            [removable]="removable" (removed)="removeCity(city)">
+                            {{city}}
+                            <mat-icon matChipRemove *ngIf="removable">cancel</mat-icon>
+                            </mat-chip>
+                        </mat-chip-list>
+
+
+                        <label id="program-radio-group-label" class="d-block">Program</label>
+                            <mat-radio-group
+                            class="radio-group row"
+                            name="program" 
+                            #program="ngModel" 
+                            [(ngModel)]="selectedProgram"
+                            [ngModelOptions]="{standalone: true}"
+                            >
+                            <mat-radio-button value="Bachelor" checked=true class="col-md-12 col-sm-3 col-4">
+                                Bachelor
+                            </mat-radio-button>
+                            <mat-radio-button  value="Master"  class="col-md-12 col-sm-3 col-4">
+                                Master
+                            </mat-radio-button>
+                            <mat-radio-button  value="MBA"  class="col-md-12 col-sm-3 col-4">
+                                MBA
+                            </mat-radio-button>
+                            <mat-radio-button value="BHD"  class="col-md-12 col-sm-3 col-4">
+                                BHD
+                            </mat-radio-button>
+                            </mat-radio-group>
+                                   
+                            
+
+                            <label>Field</label>    
+                            <select  
+                               [(ngModel)]="selectedField"
+                               (ngModelChange)="addField()"
+                               class="form-control" 
+                               name="filterField" 
+                               #filterField="ngModel" 
+                               [disabled]="cities.length < 1">
+                               <option [ngValue]="null" [disabled]="true" >Choose one field or more</option>
+                                <option *ngFor="let city of cities" [ngValue]="city">
+                                    {{ city }}
+                                </option>
+                            </select>
+                            <mat-chip-list >
+                                <mat-chip class="mr-2 mt-3" *ngFor="let city of chipList" [selectable]="selectable"
+                                [removable]="removable" (removed)="removeField(city)">
+                                {{city}}
+                                <mat-icon matChipRemove *ngIf="removable">cancel</mat-icon>
+                                </mat-chip>
+                            </mat-chip-list>
+
+
+                            <label>School</label>    
+                            <select  
+                               [(ngModel)]="selectedSchool"
+                               (ngModelChange)="addSchool()"
+                               class="form-control" 
+                               name="filterSchool" 
+                               #filterSchool="ngModel" 
+                               [disabled]="cities.length < 1">
+                               <option [ngValue]="null" [disabled]="true" >Choose one school or more</option>
+                                <option *ngFor="let city of cities" [ngValue]="city">
+                                    {{ city }}
+                                </option>
+                            </select>
+                            <mat-chip-list >
+                                <mat-chip class="mr-2 mt-3" *ngFor="let city of chipList" [selectable]="selectable"
+                                [removable]="removable" (removed)="removeSchool(city)">
+                                {{city}}
+                                <mat-icon matChipRemove *ngIf="removable">cancel</mat-icon>
+                                </mat-chip>
+                            </mat-chip-list>
+
+
+
+                            <label id="program-radio-group-label" class="d-block">Language</label>
+                            <mat-radio-group
+                            name="language" 
+                            #language="ngModel" 
+                            class="radio-group row"
+                            [(ngModel)]="selectedLanguage"
+                            [ngModelOptions]="{standalone: true}"
+                            >
+                            <mat-radio-button value="All" checked=true class="col-md-12 col-sm-3 col-4">
+                               All
+                            </mat-radio-button>
+                            <mat-radio-button  value="English"  class="col-md-12 col-sm-3 col-4">
+                               English
+                            </mat-radio-button>
+                            <mat-radio-button  value="French"  class="col-md-12 col-sm-3 col-4">
+                                French
+                            </mat-radio-button>
+                            </mat-radio-group>
+
+                            <label id="program-radio-group-label" class="d-block">Sort</label>
+                            <mat-radio-group
+                            sort="language" 
+                            #sort="ngModel"
+                            class="radio-group row"
+                            [(ngModel)]="selectedSortType"
+                            [ngModelOptions]="{standalone: true}"
+                            >
+                            <mat-radio-button value="low" checked=true class="col-md-12">
+                              Price: low to high
+                            </mat-radio-button>
+                            <mat-radio-button  value="high"  class="col-md-12">
+                               Price: high to low
+                            </mat-radio-button>
+                            </mat-radio-group>
+
+
+                            <button class="btn primary mt-3" type="button" (click)="submit()" >Filter</button>
+                        </form>
+                    </div>
+                </mat-card-content>
+            
+              </mat-card>
+        </div>
+    
+
+
+    <div class="list col-md-8 col-12">
+      <mat-card class="second-card ">
+        <mat-card-header>
+          <mat-card-title>City</mat-card-title>
+        </mat-card-header>
+        <mat-card-content>
+            <div class="form-group">
+            
+            </div>
+        </mat-card-content>
+    
+      </mat-card>
+    </div>
+
+    </div>
+
+    </div>
+    

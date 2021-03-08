@@ -1,1 +1,25 @@
-<p>programs works!</p>
+
+<div class="container">
+<div class="form-group">
+    <form  #programForm="ngForm" class="row">
+        <input [(ngModel)]="subject" class="form-control  col-md-4 offset-md-1 col-12 learn" 
+        placeholder="What do you want to learn? " 
+        #Subject="ngModel"
+        ngControl="Subject" name="Subject" type="text" />
+
+        <input class="form-control col-md-4 col-12 city" list="show-cities" id="Cities" [(ngModel)]="enteredCity" placeholder="Write or choose city" name="Cities" />
+
+        <datalist id="show-cities">
+            <option *ngFor="let city of cities; let i = index" [ngValue]="i">
+                {{ city }}
+            </option> 
+        </datalist>
+
+        <button class="btn primary col-md-2 col-12" type="button" (click)="submit()" >Search</button>
+    </form>
+</div>
+
+<app-list></app-list>
+  
+
+</div>

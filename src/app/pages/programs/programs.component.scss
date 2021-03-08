@@ -1,0 +1,63 @@
+.container {
+    .form-group {
+        width: 85%;
+        margin: auto;
+        padding: 2.5rem 0rem 1.5rem 0rem;
+        .learn {
+            margin-right: .1rem;
+        }
+
+        input,
+        datalist,
+        .btn {
+          border-radius: 0;
+          height: 3rem;
+          
+        }
+    
+        input {
+            flex-grow: 1;
+            width: 100% !important;
+            border-radius: 5px 0px 0px 5px;
+            box-shadow: 0px 0px 25px #00000029;
+            // height: 3.2rem;
+          
+            &::placeholder {
+              opacity: 0.5;
+            }
+          }
+          
+          .btn {
+            padding: 0 1rem;
+            border-radius: 0px 5px 5px 0px;
+            padding: 0rem 1.8rem;
+          }
+          .primary {
+            background-color: var(--secondary);
+            border: 1px solid var(--secondary);
+            color: #fff;
+            font-size: 1rem;
+          
+            &:hover {
+              color: #fff;
+            }
+          }
+    }
+
+    }
+  
+    ::ng-deep .mat-card {
+        box-shadow: 0px 0px 25px #00000029 !important;
+    }
+@media screen and (max-width: 769px){
+
+    .learn {
+        margin-right: 0rem;
+        margin-bottom: .1rem;
+    }
+
+    .btn {
+        border-bottom-left-radius: 12px !important;
+        border-bottom-right-radius: 12px !important;
+    }
+}

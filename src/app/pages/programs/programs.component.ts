@@ -7,9 +7,18 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ProgramsComponent implements OnInit {
 
+  subject: string='';
+  cities: any[]=['egypt', 'alex'];
+  selectedCity: string=''
+  enteredCity: any=''
   constructor() { }
 
   ngOnInit(): void {
+    this.selectedCity= this.cities[0]
   }
 
+  submit() {
+    console.log(this.subject, this.enteredCity)
+
+  }
 }
