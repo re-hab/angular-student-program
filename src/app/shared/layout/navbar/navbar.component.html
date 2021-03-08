@@ -6,20 +6,23 @@
             </div>
             <div>
                 <ul>
-                    <li class="nav-item d-none d-md-block">
-                        <a routerLink="/"class="nav-link ">Home</a>
+                    <li class="nav-item d-none d-md-block"  >
+                        <a routerLink="/" class="nav-link" routerLinkActive="active-link" 
+                        [routerLinkActiveOptions]="{exact:
+                            true}"
+                        >Home</a>
                     </li>
                     <li class="nav-item d-none d-md-block">
-                        <a routerLink="/" class="nav-link ">Programs</a>
+                        <a routerLink="/programs" class="nav-link " routerLinkActive="active-link">Programs</a>
                     </li>
                     <li class="nav-item d-none d-md-block">
-                        <a routerLink="/" class="nav-link ">Schools</a>
+                        <a routerLink="/schools" class="nav-link" routerLinkActive="active-link">Schools</a>
                     </li>
                     <li class="nav-item d-none d-md-block">
-                        <a routerLink="/" class="nav-link ">About</a>
+                        <a routerLink="/about" class="nav-link " routerLinkActive="active-link">About</a>
                     </li>
                     <li class="nav-item d-none d-md-block ml-3">
-                        <a routerLink="/" class="nav-link login">Login</a>
+                        <a routerLink="/login" class="nav-link login">Login</a>
                     </li>
 
                     <li class="d-block d-md-none">
@@ -43,18 +46,23 @@
 
 <div id="side-nav" class="sidenav">
     <a  class="closebtn" (click)="closeNav()">&times;</a>
-    <a routerLink="/">
+    <a routerLink="/" (click)="closeNav()">
        Home
     </a>
-    <a routerLink="/">
+    <a routerLink="/programs" (click)="closeNav()">
        Programs
     </a>
 
-    <a routerLink="/">
+    <a routerLink="/schools" (click)="closeNav()">
         Schools
      </a>
 
-     <a routerLink="/">
+     
+    <a routerLink="/about" (click)="closeNav()">
+        About
+     </a>
+
+     <a routerLink="/login" (click)="closeNav()">
         Login
      </a>
 

@@ -34,22 +34,25 @@
 
                 
         .menu-icon {
-            // font-size: 1.8rem !important;
-            // color:  $white;
-            // border-radius: 3px;
-            // border: 1px solid $white;
+
             padding: 0;
             margin: 0 !important;
-            //height: 3rem;
             width: 3rem;
             display: flex !important;
             align-items: center;
             justify-content: center;
         }
+
+        .fa-bars {
+            color: var(--secondary);
+        }
   
     }
 }
 
+.active-link {
+    color: var(--secondary) !important;
+}
 
   @media screen and (max-width: 768px){
       .logo {
