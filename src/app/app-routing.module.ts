@@ -14,6 +14,19 @@ const routes: Routes = [
     loadChildren: () => 
     import('./pages/programs/programs.module').then((m) => m.ProgramsModule),
   },
+  {
+    path: 'schools',
+    redirectTo: 'programs',
+     pathMatch: 'full',
+  },
+  {
+    path: 'about',
+    redirectTo: 'programs',
+  },
+  {
+    path: 'login',
+    redirectTo: 'programs',
+  },
 ];
 
 @NgModule({
