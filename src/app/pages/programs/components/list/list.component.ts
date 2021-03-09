@@ -54,7 +54,8 @@ export class ListComponent implements OnInit {
 
 
   filter(): void {
-    if (this.cityChipList)
+
+    if (this.cityChipList.length > 0)
       this.programs = this.programs.filter((item) => {
         return this.cityChipList.includes(item.city);
       });
@@ -65,15 +66,18 @@ export class ListComponent implements OnInit {
         return item.level === this.selectedProgram;
       });
 
-    if (this.fieldChipList)
+
+    if (this.fieldChipList.length > 0)
       this.programs = this.programs.filter((item) => {
         return this.fieldChipList.includes(item.type);
       });
 
-    if (this.schoolChipList)
+    if (this.schoolChipList.length > 0)
       this.programs = this.programs.filter((item) => {
         return this.schoolChipList.includes(item.school);
       });
+
+
 
     if (this.selectedLanguage)
       switch (this.selectedLanguage) {
@@ -105,7 +109,7 @@ export class ListComponent implements OnInit {
       this.programs = data[2].data
       if (this.searchCity)
         this.programs = this.programs.filter((item) => {
-          return item.city === this.searchCity;
+          return item.city.includes(this.searchCity);
         });
 
       if (this.searchLearn)

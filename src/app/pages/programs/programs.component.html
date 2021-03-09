@@ -7,10 +7,13 @@
         #Subject="ngModel"
         ngControl="Subject" name="Subject" type="text" />
 
-        <input class="form-control col-md-4 col-12 city" list="show-cities" id="Cities" [(ngModel)]="enteredCity" placeholder="Write or choose city" name="Cities" />
+        <input class="form-control col-md-4 col-12 city" list="show-cities" 
+               type="text"
+               [(ngModel)]="enteredCity" 
+               placeholder="Write or choose city" name="Cities" ngControl="Cities" #Cities="ngModel">
 
         <datalist id="show-cities">
-            <option *ngFor="let city of cities; let i = index" [ngValue]="i">
+            <option *ngFor="let city of cities" [value]="city">
                 {{ city }}
             </option> 
         </datalist>
