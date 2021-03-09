@@ -39,7 +39,7 @@ export class ListComponent implements OnInit {
   constructor(private progService: ProgramService) { }
 
   ngOnInit(): void {
-    this.cityChipList = ['Paris', 'Barcelona', 'Marseille'];
+    this.cityChipList = ['Paris', 'Barcelona', 'Brest'];
     this.fieldChipList = ['Business & Management', 'International Business'];
     this.schoolChipList = ['TOULOUSE BUSINESS SCHOOL', 'EXCELIA', 'EM NORMANDIE', 'ESSCA'];
     this.getPrograms();

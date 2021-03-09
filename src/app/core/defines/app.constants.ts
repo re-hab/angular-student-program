@@ -2,6 +2,8 @@ export class Constant {
     public static availableCities: any = [
         'Paris',
         'Barcelona',
+        'Brest',
+        'Nantes',
         'Toulouse',
         'Bordeaux',
         'Marseille',
