@@ -8,7 +8,6 @@ const routes: Routes = [
     // loadChildren: () => 
     // import('./pages/home/home.module').then((m) => m.HomeModule),
      pathMatch: 'full',
-     
   },
   {
     path: 'programs',
