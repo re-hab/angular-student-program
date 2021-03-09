@@ -106,9 +106,16 @@
           }
       }
 
+ 
       .list {
-        max-height: 1188.5px;
+        max-height: 1148px;
         overflow-y:auto;
+        overflow-x: auto;
+        scroll-behavior: smooth;
+      }
+
+      .scrollbar-hidden::-webkit-scrollbar {
+        display: none;
       }
 }
 

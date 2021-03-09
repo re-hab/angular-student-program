@@ -48,19 +48,6 @@ export class ListComponent implements OnInit {
   getPrograms() {
     this.progService.getPrograms().subscribe((data: any) => {
       this.programs = data[2].data
-
-      let flags = [];
-      let output = [];
-      let l = this.programs.length
-      
-      for (let i = 0; i < l; i++) {
-        if (flags[this.programs[i].type]) continue;
-        flags[this.programs[i].type] = true;
-        output.push(this.programs[i].type);
-      }
-
-      console.log(flags)
-
       this.filter()
     })
   }
